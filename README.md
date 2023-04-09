@@ -1,5 +1,11 @@
-# Sample
-## Create HTML
+# hello-cf-stream
+This is a sample for Cloudflare Streams, which includes the following:
+
+- Markdown to generate sample HTML and instructions on how to use it
+- Golang client for generating tokens to use with signed URLs.
+
+## Simple sample
+### Create HTML
 ```html
 <html>
 <head>
@@ -14,20 +20,20 @@
 </html>
 ```
 
-## Run localhost server
+### Run localhost server
 ```bash
 npx http-server -p 8090
 ```
 
-# Sample with Signed URL
-## Obtain a key
+## Sample with Signed URL
+### Obtain a key
 ```bash
 API_TOKEN=<your_api_token>
 ACCOUNT_ID=<your_account_id>
 curl -X POST -H "Authorization: Bearer $API_TOKEN" "https://api.cloudflare.com/client/v4/accounts/$ACCOUNT_ID/stream/keys" : keys.json
 ```
 
-## Generate JWT
+### Generate JWT
 ```bash
 go run main.go <your_video_id>
 ```
